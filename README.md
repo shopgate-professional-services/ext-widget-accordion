@@ -42,21 +42,25 @@ You can configure widget settings in [Shopgate Merchant admin](https://developer
 Set the following value in your Shopgate Connect Admin:
 
 * styles - (json) styles for widget elements [see anatomy of widget](./demo/anatomy.jpg)
-    * accordionWrapper - (json) css rules for accordion wrapper
-    * accordion - (json) css rules for accordion
-    * labelExpanded - (json)  css rules for label
-    * labelCollapsed - (json)  css rules for label
+    * accordion - (json) css rules for accordion wrapper
+    * header - (json) css rules for accordion header
+    * headerToggle - (json) css rules for accordion toggle wrapper
+    * labelExpanded - (json)  css rules for expanded label
+    * labelCollapsed - (json)  css rules for collapsed label
     * content - (json)  css rules for content
 
 ## Extension Configuration example
 ```json
 {
   "styles": {
-    "accordionWrapper": {
-      "paddingTop": 20
-    }, 
     "accordion": {
-      "background": "#fff"
+      "paddingTop": 20
+    },
+    "headerToggle": {
+      "marginBottom": 12
+    },  
+    "header": {
+      "background": "#fefefe"
     }, 
     "labelExpanded": {
       "color": "#900"
