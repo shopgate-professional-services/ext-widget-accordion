@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/engage';
+import { useNavigation } from '@shopgate/engage/core';
 import { Accordion, HtmlSanitizer } from '@shopgate/engage/components';
 import { styles as configStyles } from '../../config';
 
@@ -29,6 +30,8 @@ const styles = {
  * @returns {JSX}
  */
 const AccordionWidget = ({ settings }) => {
+  const { push } = useNavigation();
+
   if (!settings) {
     return null;
   }
@@ -50,7 +53,18 @@ const AccordionWidget = ({ settings }) => {
               </span>
             )}
           >
-            <HtmlSanitizer className={styles.content}>
+            <HtmlSanitizer
+              className={styles.content}
+              settings={{
+                html: panel.content,
+                handleClick: (pathname, target) => (
+                  push({
+                    pathname,
+                    ...target && { state: { target } },
+                  })
+                ),
+              }}
+            >
               {panel.content}
             </HtmlSanitizer>
           </Accordion>
