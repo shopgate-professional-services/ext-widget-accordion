@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "id": "@shopgate-project/widget-accordion",
+  "configuration": {
+    "styles": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "accordion": null,
+        "header": null,
+        "headerToggle": null,
+        "labelCollapsed": null,
+        "labelExpanded": null,
+        "content": null
+      },
+      "params": {
+        "type": "json",
+        "label": "Styles for accordion components"
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "AccordionWidget",
+      "path": "frontend/widgets/AccordionWidget",
+      "type": "widgets",
+      "description": "Accordion Widget"
+    }
+  ],
+  "steps": []
+}
